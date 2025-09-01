@@ -1,0 +1,39 @@
+.outer-c{
+    width: 500px;
+    height: 200px;
+    gap: 10px;
+    background-color: rgb(200, 209, 209);
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.d-in-inside{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.c-in{
+    margin-top: 10px;
+}
+button{
+    border: none;
+    border-radius: 5px;
+    width: 90px;
+    padding: 5px;
+    color: rgb(8, 11, 11);
+    background-color: rgb(253, 249, 249);
+}
+
+button:hover{
+    background-color: rgb(2, 16, 16);
+    color: rgb(255, 255, 255);
+    transition:cubic-bezier(0.39, 0.575, 0.565, 1);
+    transform:rotate();
+    cursor: pointer;
+}
