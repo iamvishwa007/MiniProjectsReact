@@ -62,7 +62,14 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-button {
+.c-in h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.outer-c button {
   border: none;
   border-radius: 12px;
   width: 100px;
@@ -77,9 +84,12 @@ button {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
-button::before {
+.outer-c button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -90,49 +100,49 @@ button::before {
   transition: left 0.5s;
 }
 
-button:hover::before {
+.outer-c button:hover::before {
   left: 100%;
 }
 
-button:hover {
+.outer-c button:hover {
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-button:active {
+.outer-c button:active {
   transform: translateY(0);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Special styling for start/stop button */
-button.start {
+.outer-c button:first-child {
   background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
   color: white;
 }
 
-button.start:hover {
+.outer-c button:first-child:hover {
   background: linear-gradient(135deg, #00a085 0%, #008f75 100%);
   transform: translateY(-2px);
 }
 
-button.stop {
+.outer-c button:nth-child(2) {
   background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
   color: white;
 }
 
-button.stop:hover {
+.outer-c button:nth-child(2):hover {
   background: linear-gradient(135deg, #d63031 0%, #c0392b 100%);
   transform: translateY(-2px);
 }
 
-button.reset {
+.outer-c button:last-child {
   background: linear-gradient(135deg, #6c5ce7 0%, #5f3dc4 100%);
   color: white;
 }
 
-button.reset:hover {
+.outer-c button:last-child:hover {
   background: linear-gradient(135deg, #5f3dc4 0%, #4c3dc4 100%);
   transform: translateY(-2px);
 }
@@ -158,17 +168,17 @@ button.reset:hover {
   color: white;
 }
 
-.outer-c.dark button.start {
+.outer-c.dark button:first-child {
   background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
   color: white;
 }
 
-.outer-c.dark button.stop {
+.outer-c.dark button:nth-child(2) {
   background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
   color: white;
 }
 
-.outer-c.dark button.reset {
+.outer-c.dark button:last-child {
   background: linear-gradient(135deg, #6c5ce7 0%, #5f3dc4 100%);
   color: white;
 }
@@ -186,7 +196,11 @@ button.reset:hover {
     padding: 8px 16px;
   }
   
-  button {
+  .c-in h1 {
+    font-size: 20px;
+  }
+  
+  .outer-c button {
     width: 80px;
     padding: 10px 12px;
     font-size: 13px;

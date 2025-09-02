@@ -204,6 +204,7 @@ legend {
   justify-content: center;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
+  font-style: italic;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -233,4 +234,13 @@ legend {
     padding: 10px 16px;
     font-size: 13px;
   }
+}
+
+/* Ensure component buttons are not affected by global styles */
+.outer-c button {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 1 !important;
 }

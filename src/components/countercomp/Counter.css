@@ -62,7 +62,14 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-button {
+.c-in h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.outer-c button {
   border: none;
   border-radius: 12px;
   width: 100px;
@@ -77,9 +84,12 @@ button {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
-button::before {
+.outer-c button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -90,18 +100,18 @@ button::before {
   transition: left 0.5s;
 }
 
-button:hover::before {
+.outer-c button:hover::before {
   left: 100%;
 }
 
-button:hover {
+.outer-c button:hover {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-button:active {
+.outer-c button:active {
   transform: translateY(0);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -140,7 +150,11 @@ button:active {
     padding: 8px 16px;
   }
   
-  button {
+  .c-in h1 {
+    font-size: 20px;
+  }
+  
+  .outer-c button {
     width: 80px;
     padding: 10px 12px;
     font-size: 13px;
