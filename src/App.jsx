@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './App.css'
-import Toggle from './components/Toggle';
-import Counter from './components/Counter.jsx';
+import Toggle from './components/togglecomp/Toggle.jsx';
+import Counter from './components/countercomp/Counter.jsx';
+import StopWatch from './components/stopwatchcomp/StopWatch.jsx';
 
 function App() {
   const[theme,setTheme]=useState('light');
@@ -18,6 +19,7 @@ function App() {
       </fieldset>
       <fieldset className={`counter ${theme}`}>
         <legend>#2 StopWatch</legend>
+        <StopWatch/>
       </fieldset>
        <fieldset className={`counter ${theme}`}>
         <legend>#2 StopWatch</legend>

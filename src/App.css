@@ -1,114 +1,236 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.body-ctn{
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.body-ctn {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
-.head-ctn{
-  background-color: aqua;
-  height: 60px;
+
+.head-ctn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  backdrop-filter: blur(10px);
+  height: 70px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center; 
-  padding: 0 20px;
-
+  padding: 0 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .head-ctn h1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
 }
 
-.main-ctn{
- min-height: 100vh;
- padding-top: 70px;
- padding-left: 40px;
- padding-right: 40px;
+legend {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #4a5568;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.main-ctn.light{
-  background-color:white;
+
+.main-ctn {
+  min-height: 100vh;
+  padding-top: 90px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  transition: all 0.3s ease;
 }
-.main-ctn.dark{
-  background-color: black;
-} 
-.counter.dark{
-    border: 6px solid white;
-    color: white;
-   
+
+.main-ctn.light {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
+
+.main-ctn.dark {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: #e2e8f0;
+}
+
 .toggle-out {
-  margin-left: auto; 
   display: flex;
   gap: 15px;
+  align-items: center;
 }
+
 .toggle-btn {
-  width: 80px;
+  width: 90px;
   border: none;
-  border-radius: 8px;
-  padding: 8px 14px;
+  border-radius: 25px;
+  padding: 12px 20px;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.toggle-btn:hover::before {
+  left: 100%;
 }
 
 .toggle-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-#light{
-  background-color: white;
-  color: black;
+#light {
+  background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+  color: #2d3748;
+  border: 2px solid rgba(102, 126, 234, 0.3);
 }
 
-#black{
- background-color: black;
- color: white;
-}
-#light:hover{
-  background-color: black;
- color: white;
-}
-#black:hover{
-background-color: white;
-  color: black;
+#black {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: #f7fafc;
+  border: 2px solid rgba(247, 250, 252, 0.3);
 }
 
-.counter{
-  height: 300px;
-  border: 6px solid black;
-  border-radius: 10px;
+#light:hover {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: #f7fafc;
+  border-color: rgba(247, 250, 252, 0.5);
+}
+
+#black:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+  color: #2d3748;
+  border-color: rgba(45, 55, 72, 0.5);
+}
+
+.counter {
+  height: 320px;
+  width: 85%;
+  margin: 0 auto 40px auto;
+  border: none;
+  border-radius: 20px;
   padding: 40px;
-  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.counter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
 
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
 
+.counter:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
 
+.counter.dark {
+  background: rgba(45, 55, 72, 0.95);
+  color: #e2e8f0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
 
+.counter.dark:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
 
-
-
-
-.footer-ctn{
-  background-color: black;
-  color: white;
-  height: 60px;
-  margin-top: 10px;
+.footer-ctn {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  color: #e2e8f0;
+  height: 70px;
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .head-ctn {
+    padding: 0 20px;
+  }
+  
+  .head-ctn h1 {
+    font-size: 24px;
+  }
+  
+  .main-ctn {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .counter {
+    width: 95%;
+    padding: 30px 20px;
+  }
+  
+  .toggle-btn {
+    width: 80px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
 }
